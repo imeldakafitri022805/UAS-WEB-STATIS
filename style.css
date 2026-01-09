@@ -1,0 +1,84 @@
+:root {
+    --p-color: #0052ff;
+    --s-color: #6366f1;
+    --dark: #020617;
+    --glass: rgba(255, 255, 255, 0.7);
+    --border: rgba(255, 255, 255, 0.2);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+body { background: #f8fafc; color: var(--dark); }
+
+/* NAVBAR LUXURY */
+.glass-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 8%; position: fixed; width: 90%; left: 5%; top: 20px;
+    background: var(--glass); backdrop-filter: blur(20px);
+    border: 1px solid var(--border); border-radius: 100px; z-index: 1000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.logo { font-size: 1.4rem; font-weight: 800; letter-spacing: -1px; }
+.logo span { color: var(--p-color); }
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--p-color); }
+
+/* HERO PREMIUM */
+.hero-premium {
+    height: 100vh; background: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1920&q=80') center/cover;
+    display: flex; align-items: center; justify-content: center; text-align: center; color: white; position: relative;
+}
+
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(2,6,23,0.7), rgba(2,6,23,0.3)); }
+
+.hero-content { position: relative; z-index: 10; max-width: 900px; padding: 0 20px; }
+.hero-badge { background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); display: inline-block; padding: 8px 20px; border-radius: 50px; border: 1px solid var(--border); margin-bottom: 25px; font-weight: 600; font-size: 0.8rem; }
+
+.hero-premium h1 { font-size: 4.5rem; font-weight: 800; line-height: 1.1; letter-spacing: -2px; }
+.text-gradient { background: linear-gradient(90deg, #fff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.hero-stats { display: flex; justify-content: center; gap: 50px; margin-top: 50px; }
+.stat-item strong { display: block; font-size: 1.8rem; }
+.stat-item span { font-size: 0.8rem; color: #cbd5e1; }
+
+/* FILTER GLASS */
+.filter-overlap { margin-top: -60px; padding: 0 8%; position: relative; z-index: 20; }
+.filter-glass { background: rgba(255,255,255,0.8); backdrop-filter: blur(30px); border: 1px solid white; padding: 30px; border-radius: 30px; display: flex; gap: 20px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+.f-group { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.f-group label { font-size: 0.75rem; font-weight: 800; color: #64748b; text-transform: uppercase; }
+.f-group select { border: none; background: transparent; font-size: 1rem; font-weight: 600; outline: none; }
+
+.btn-search-full { background: var(--dark); color: white; border: none; padding: 0 40px; border-radius: 15px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+.btn-search-full:hover { background: var(--p-color); transform: scale(1.05); }
+
+/* VEHICLE CARD PREMIUM */
+.v-card-premium { background: white; border-radius: 30px; overflow: hidden; border: 1px solid #f1f5f9; transition: 0.4s; }
+.v-img-wrap { height: 250px; position: relative; overflow: hidden; }
+.v-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+.v-card-premium:hover .v-img-wrap img { transform: scale(1.1); }
+
+.v-body { padding: 30px; }
+.v-cat { color: var(--p-color); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; }
+.v-meta { display: flex; gap: 15px; margin: 15px 0; color: #64748b; font-size: 0.85rem; }
+.v-price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+.price-val { font-size: 1.4rem; font-weight: 800; }
+
+.btn-action { background: #f1f5f9; border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; transition: 0.3s; }
+.v-card-premium:hover { transform: translateY(-15px); box-shadow: 0 40px 80px rgba(0,0,0,0.1); }
+.v-card-premium:hover .btn-action { background: var(--p-color); color: white; }
+
+/* WHATSAPP FLOAT */
+.whatsapp-float {
+    position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white;
+    padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; gap: 10px;
+    text-decoration: none; font-weight: 700; z-index: 2000; box-shadow: 0 10px 30px rgba(37,211,102,0.3);
+}
+.whatsapp-float img { width: 25px; }
+
+@media (max-width: 768px) {
+    .glass-nav { width: 95%; left: 2.5%; }
+    .hero-premium h1 { font-size: 2.5rem; }
+    .filter-glass { flex-direction: column; }
+    .nav-links { display: none; }
+}
